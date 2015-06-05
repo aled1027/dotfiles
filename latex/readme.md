@@ -1,0 +1,3 @@
+- One way to get a word count: 
+    - pdftops file.pdf
+    - ps2ascii file.ps | wc -w

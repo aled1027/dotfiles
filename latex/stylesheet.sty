@@ -1,0 +1,72 @@
+% Alex Ledger's Generic Style Sheet
+% 
+% Commands that I often use
+%
+% To import: add \usepackage{/home/alex/.latex/stylesheet} to preamble
+
+% Make enumerate and itemize line spacing closer together
+\usepackage{amsmath,amssymb,amsthm, mathtools,graphicx}
+
+\let\oldenumerate\enumerate
+\renewcommand{\enumerate}{
+  \oldenumerate
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}
+
+\let\olditemize\itemize
+\renewcommand{\itemize}{
+  \olditemize
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+} 
+
+% Generic
+\newcommand{\QQ}{\mathbb{Q}} 
+\newcommand{\RR}{\mathbb{R}} 
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\im}{\text{im }}
+\newcommand{\sA}{\mathcal{A}}
+\newcommand{\sO}{\mathcal{O}}
+
+% Abstract Algebra
+\newcommand{\normal}{\trianglelefteq}
+\newcommand{\semi}{\rtimes}
+\newcommand{\Ann}{\operatorname{Ann}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Tor}{\operatorname{Tor}}
+
+% Divisor Theory
+\newcommand{\Lap}{{L}}
+\newcommand{\RLap}{\widetilde{L}}
+\newcommand{\Aut}{\operatorname{Aut}}
+
+% Cryptography
+\newcommand{\Gen}{\text{Gen}}
+\newcommand{\Mac}{\text{Mac}}
+\newcommand{\Dec}{\text{Dec}}
+\newcommand{\Enc}{\text{Enc}}
+\newcommand{\negl}{\text{negl}}
+\newcommand{\Macforge}{\text{Mac-forge}}
+
+
+
+%%%% OTHER THINGS %%%%%%
+% partial derivative
+\newcommand{\pder}[2][]{\frac{\partial#1}{\partial#2}}
+
+% symbol for open subset
+\newcommand\opn{\mathrel{\ooalign{$\subseteq$\cr
+  \hidewidth\raise.225ex\hbox{$\circ\mkern.5mu$}\cr}}}
+
+% symbol for closed subset
+\newcommand\cls{\mathrel{\ooalign{$\subseteq$\cr
+  \hidewidth\raise.225ex\hbox{$\bullet\mkern.5mu$}\cr}}}
+  
+
+
