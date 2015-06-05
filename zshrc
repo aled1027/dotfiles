@@ -14,15 +14,12 @@ alias mc='make clean'
 # alias p='python'
 alias p='python -W ignore'
 alias pd='python -W ignore -m pdb'
-alias pi='python -i'
-alias p3i='python3 -i'
+alias pi='python -W ignore -i'
+alias p3i='python3 -W ignore -i'
 export TERM=xterm-256color
 export PYTHONSTARTUP="$HOME/.pythonrc"
 
 # more additions at end
-
-
-
 
 #--------End my additions----------
 
@@ -32,7 +29,6 @@ export PYTHONSTARTUP="$HOME/.pythonrc"
 # time that oh-my-zsh is loaded.
 
 ZSH_THEME="af-magic"
-# ZSH_THEME="robbyrussell"
 
 #PROMPT="alex"
 #export PS1="alex"
