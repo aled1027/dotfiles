@@ -87,18 +87,18 @@ set noswapfile
 " --------------Miscellaneous-------------------------
 
 " adds in comments from the line marked t to current line
-nnoremap <leader>c :call CommentWithHashtags()<cr>
+nnoremap <leader>c :call CommentWithSlashes()<cr>
 
 " add in header comments with $h
 " inoremap <buffer> $h #--- PH ----------------------------------------------<esc>FP2xi
 
 function! CommentWithHashtags()
-    't,.s/^/#/
+    'c,.s/^/#/
     noh
 endfunction
 
 function! CommentWithSlashes()
-    " 't,.s\^\{//}\
+    'c,.s\^\{//}\
     noh
 endfunction
 
