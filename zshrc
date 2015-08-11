@@ -5,6 +5,7 @@ export ZSH=$HOME/dotfiles/oh-my-zsh
 #-----------My Additions-----------
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
+
 alias g++='g++ -std=c++11'
 alias vimq='env | grep vim'
 alias vims='vim -S'
@@ -20,6 +21,14 @@ alias pi='python -W ignore -i'
 alias p3i='python3 -W ignore -i'
 export TERM=xterm-256color
 export PYTHONSTARTUP="$HOME/.pythonrc"
+
+# Changing things based on OS
+if [[ $USER == 'aledger' ]] ; then
+    alias open='open'
+else
+    alias open='gnome-open'
+fi
+
 
 # more additions at end
 
