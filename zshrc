@@ -6,7 +6,7 @@ export ZSH=$HOME/dotfiles/oh-my-zsh
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 
-alias g++='g++ -std=c++11'
+alias g++='g++-4.9 -std=c++14 '
 alias vimq='env | grep vim'
 alias vims='vim -S'
 alias vimr='vim -R'
@@ -92,6 +92,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/home/alex/anaconda3/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
