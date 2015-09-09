@@ -5,7 +5,9 @@ export ZSH=$HOME/dotfiles/oh-my-zsh
 #-----------My Additions-----------
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
+export LD_LIBRARY_PATH=/home/alex/my_libs/msgpack-c
 
+alias gcc='gcc -std=c99'
 alias g++='g++-4.9 -std=c++14 '
 alias vimq='env | grep vim'
 alias vims='vim -S'
