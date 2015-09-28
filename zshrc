@@ -24,6 +24,8 @@ alias p3i='python3 -W ignore -i'
 export TERM=xterm-256color
 export PYTHONSTARTUP="$HOME/.pythonrc"
 
+alias grep='grep --color=always'
+
 # Changing things based on OS
 if [[ $USER == 'aledger' ]] ; then
     alias open='open'
