@@ -99,6 +99,15 @@ au FileType cpp set comments=sl:/*,mb:\ *,elx:\ */
 au FileType cpp map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 
 
+""""""""""""""""""""""""""""""
+" => C section
+"""""""""""""""""""""""""""""""
+au FileType c map <F4> :e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>
+
+augroup project
+    autocmd!
+    autocmd BufRead,BufNewFile *.h,*.c set filetype=c
+augroup END
 
 
 

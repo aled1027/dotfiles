@@ -15,6 +15,8 @@
         - out of the box with haskellmode-vim
 
 ## Usage
+    - <leader> cl: comment single line or multiple lines
+    - <leader c <leader>: uncomment line or multiple lines
     - executing commands inside of vim
         - :! echo 'here'
     - reading a file / command into vim buffer
