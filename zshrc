@@ -22,6 +22,10 @@ export TERM=xterm-256color
 export PYTHONSTARTUP="$HOME/.pythonrc"
 
 # more additions at end
+# ADDITIONS FOR MARKOV:
+export PYTHONPATH=$PYTHONPATH:/Users/alexledger/Desktop/new_alife
+# END ADDITIONS FOR MARKOV
+
 
 #--------End my additions----------
 
