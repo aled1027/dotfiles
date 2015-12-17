@@ -9,6 +9,7 @@ nmap <silent> <Leader>rv <Plug>SetTmuxVars
 
 "
 "---------------------GENERAL-------------------------
+set cursorline
 set history=700
 filetype plugin on
 filetype indent on
@@ -25,6 +26,7 @@ set autoread
 
 "  hide buffer when it becomes abandoned
 set hid
+set nu
 
 "---  Moving between splits  ----------------------------------------------
 nnoremap <C-J> <C-W><C-J>
