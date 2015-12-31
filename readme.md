@@ -21,4 +21,8 @@ TODO
 ### To update vim
 - to update the vim files, simply run `cd vim_runtime; python update_plugins.py`
 
+### Miscellaneous
+- Good command line tools:
+    - `htop` - a better version of `top`
+
 
