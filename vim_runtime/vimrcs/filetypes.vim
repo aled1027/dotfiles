@@ -25,6 +25,7 @@ au FileType python map <buffer> <leader>2 /def
 au FileType python map <buffer> <leader>C ?class 
 au FileType python map <buffer> <leader>D ?def 
 au FileType python set nosmartindent
+au FileType python let g:syntastic_ignore_files = ['\.py$']
 
 au FileType python syn match   pythonDefStatement  /^\s*\%(def\|class\)/
        \ nextgroup=pythonFunction skipwhite
@@ -96,7 +97,7 @@ au FileType cpp set expandtab        " expand tabs to spaces
 au FileType cpp set textwidth=120
 au FileType cpp set showmatch
 au FileType cpp set comments=sl:/*,mb:\ *,elx:\ */
-au FileType cpp map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
+" au FileType cpp map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 
 
 """"""""""""""""""""""""""""""

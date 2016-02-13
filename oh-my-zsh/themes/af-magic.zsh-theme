@@ -6,7 +6,8 @@ if [ $UID -eq 0 ]; then NCOLOR="red"; else NCOLOR="green"; fi
 local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 
 # prompts
-PROMPT='$FG[032] %m - %C$(git_prompt_info) ➜ '
+PROMPT='$FG[032] %C$(git_prompt_info) ➜ '
+# for markov: PROMPT='$FG[032] %m - %C$(git_prompt_info) ➜ '
 PROMPT2='%{$fg[red]%}\ %{$reset_color%}'
 RPS1='${return_code}'
 

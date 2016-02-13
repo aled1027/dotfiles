@@ -24,5 +24,8 @@ TODO
 ### Miscellaneous
 - Good command line tools:
     - `htop` - a better version of `top`
+- git command to git rm all deleted files:
+    - `git ls-files --deleted -z | xargs -0 git rm`
+- Inside of gdb, `run > out` or run command-line-args > out` will print to a file.
 
 

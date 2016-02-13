@@ -15,6 +15,8 @@
         - out of the box with haskellmode-vim
 
 ## Usage
+    - control f for file search
+    - control g for tag search
     - <leader> cl: comment single line or multiple lines
     - <leader c <leader>: uncomment line or multiple lines
     - executing commands inside of vim

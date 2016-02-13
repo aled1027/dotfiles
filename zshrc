@@ -3,6 +3,13 @@ export ZSH=$HOME/dotfiles/oh-my-zsh
 
 
 #-----------My Additions-----------
+
+alias goff='make full_cbc_garb_off'
+alias gon='make full_cbc_garb_on'
+alias eoff='make full_cbc_eval_off'
+alias eon='make full_cbc_eval_on'
+
+
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 export LD_LIBRARY_PATH=/home/alex/my_libs/msgpack-c
@@ -19,11 +26,11 @@ alias mr='make run'
 # alias p='python'
 alias p2='python2.7'
 alias p2i='python2.7 -i'
-alias p='python -W ignore'
-alias p3='python3 -W ignore'
+alias p='python'
+alias p3='python3'
 alias pd='python -W ignore -m pdb'
-alias pi='python -W ignore -i'
-alias p3i='python3 -W ignore -i'
+alias pi='python -i'
+alias p3i='python3 -i'
 export TERM=xterm-256color
 export PYTHONSTARTUP="$HOME/.pythonrc"
 
