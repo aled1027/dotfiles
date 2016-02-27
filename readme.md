@@ -28,4 +28,8 @@ TODO
     - `git ls-files --deleted -z | xargs -0 git rm`
 - Inside of gdb, `run > out` or run command-line-args > out` will print to a file.
 
+### Anaconda
+`source activate data_analysis`
+`source deactivate`
+
 
