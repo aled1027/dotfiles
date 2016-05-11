@@ -32,4 +32,6 @@ TODO
 `source activate data_analysis`
 `source deactivate`
 
+### PDFTK
+`pdftk f1.pdf f2.pdf f3.pdf cat out combined.pdf`
 

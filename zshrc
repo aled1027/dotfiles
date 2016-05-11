@@ -32,7 +32,7 @@ alias pd='python -W ignore -m pdb'
 alias pi='python -i'
 alias p3i='python3 -i'
 export TERM=xterm-256color
-export PYTHONSTARTUP="$HOME/.pythonrc"
+#export PYTHONSTARTUP="$HOME/.pythonrc"
 
 alias grep='grep --color=always'
 
