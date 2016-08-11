@@ -4,10 +4,9 @@ export ZSH=$HOME/dotfiles/oh-my-zsh
 
 #-----------My Additions-----------
 
-alias goff='make full_cbc_garb_off'
-alias gon='make full_cbc_garb_on'
-alias eoff='make full_cbc_eval_off'
-alias eon='make full_cbc_eval_on'
+alias gpp='git push origin $(current_branch)'
+alias make_pdf='pdftk *.pdf cat output out.pdf'
+alias lein='/home/alex/Documents/summer/clojure/lein'
 
 
 export EDITOR=/usr/bin/vim
@@ -23,17 +22,11 @@ alias m='make'
 alias mo='make &> out.out'
 alias mc='make clean'
 alias mr='make run'
-# alias p='python'
-alias p2='python2.7'
-alias p2i='python2.7 -i'
 alias p='python'
-alias p3='python3'
-alias pd='python -W ignore -m pdb'
 alias pi='python -i'
-alias p3i='python3 -i'
+alias pd='python setup.py develop'
+alias pt='python tests.py'
 export TERM=xterm-256color
-#export PYTHONSTARTUP="$HOME/.pythonrc"
-
 alias grep='grep --color=always'
 
 # Changing things based on OS
@@ -46,7 +39,7 @@ fi
 
 # more additions at end
 # ADDITIONS FOR MARKOV:
-export PYTHONPATH=$PYTHONPATH:/Users/alexledger/Desktop/new_alife
+#export PYTHONPATH=$PYTHONPATH:/Users/alexledger/Desktop/new_alife
 # END ADDITIONS FOR MARKOV
 
 
