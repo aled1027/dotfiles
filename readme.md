@@ -29,6 +29,15 @@ TODO
 - Inside of gdb, `run > out` or run command-line-args > out` will print to a file.
 - `git d file.py` runs git diff in vimdiff
 
+### Networking
+- If only able to access (listed below), you might only be able to access ipv6 websites.
+    - google, youtube, facebook, example.com, yahoo.com
+- dig command
+    - used for querying DNS nameservers for information
+    - or maybe not.
+    - maybe only ipv6?
+
+
 ### Anaconda
 `source activate data_analysis`
 `source deactivate`

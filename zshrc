@@ -33,8 +33,11 @@ alias grep='grep --color=always'
 if [[ $USER == 'aledger' ]] ; then
     alias open='open'
 else
-    alias open='gnome-open'
+    alias open='xdg-open'
 fi
+
+# for keychain
+eval $(keychain --quiet --eval --agents ssh id_rsa)
 
 
 # more additions at end
