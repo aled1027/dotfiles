@@ -27,6 +27,7 @@ set autoread
 "  hide buffer when it becomes abandoned
 set hid
 set nu
+set ff=unix 
 
 "---  Moving between splits  ----------------------------------------------
 nnoremap <C-J> <C-W><C-J>

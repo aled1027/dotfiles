@@ -37,6 +37,10 @@ hi link pythonDefStatement Statement
 
 set foldmethod=syntax
 
+""""""""""""""""""""""""""""""
+" => Java section
+"""""""""""""""""""""""""""""""
+au Filetype java syntax on
 
 """"""""""""""""""""""""""""""
 " => JavaScript section

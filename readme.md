@@ -28,6 +28,9 @@ TODO
     - `git ls-files --deleted -z | xargs -0 git rm`
 - Inside of gdb, `run > out` or run command-line-args > out` will print to a file.
 - `git d file.py` runs git diff in vimdiff
+- look into https://github.com/airblade/vim-rooter for finding project root
+    - should make it so that vim automatically finds the makefile and tags file, regardless
+    - of where vim opens up
 
 ### Networking
 - If only able to access (listed below), you might only be able to access ipv6 websites.

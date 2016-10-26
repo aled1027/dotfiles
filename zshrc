@@ -18,6 +18,8 @@ alias g++='g++-4.9 -std=c++14 '
 alias vimq='env | grep vim'
 alias vims='vim -S'
 alias vimr='vim -R'
+alias c='./compile.sh'
+alias r='./run.sh'
 alias m='make'
 alias mo='make &> out.out'
 alias mc='make clean'
@@ -30,14 +32,14 @@ export TERM=xterm-256color
 alias grep='grep --color=always'
 
 # Changing things based on OS
-if [[ $USER == 'aledger' ]] ; then
-    alias open='open'
-else
-    alias open='xdg-open'
-fi
+#if [[ $USER == 'aledger' ]] ; then
+#    alias open='open'
+#else
+#    alias open='xdg-open'
+#fi
 
 # for keychain
-eval $(keychain --quiet --eval --agents ssh id_rsa)
+# eval $(keychain --quiet --eval --agents ssh id_rsa)
 
 
 # more additions at end
