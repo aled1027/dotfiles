@@ -88,7 +88,6 @@ let g:haddock_browser="/usr/bin/firefox"
 """"""""""""""""""""""""""""""
 " => CPlusPlus section
 """""""""""""""""""""""""""""""
-au FileType cpp set nocompatible
 au FileType cpp set autoindent
 au FileType cpp set smartindent
 au FileType cpp set tabstop=4        " tab width is 4 spaces

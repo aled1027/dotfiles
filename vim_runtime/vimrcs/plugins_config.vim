@@ -7,6 +7,12 @@ call pathogen#infect('~/dotfiles/vim_runtime/sources_non_forked/{}')
 call pathogen#helptags()
 
 """"""""""""""""""""""""""""""
+" => Vim instant markdown
+""""""""""""""""""""""""""""""
+filetype plugin on
+
+
+""""""""""""""""""""""""""""""
 " => bufExplorer plugin
 """"""""""""""""""""""""""""""
 let g:bufExplorerDefaultHelp=0
@@ -14,6 +20,8 @@ let g:bufExplorerShowRelativePath=1
 let g:bufExplorerFindActive=1
 let g:bufExplorerSortBy='name'
 map <leader>o :BufExplorer<cr>
+
+
 
 
 """"""""""""""""""""""""""""""

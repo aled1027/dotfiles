@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/dotfiles/oh-my-zsh
+export GOPATH=$HOME/Documents/goworkspace
 
 
 #-----------My Additions-----------
@@ -12,8 +13,6 @@ alias lein='/home/alex/Documents/summer/clojure/lein'
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 
-alias gcc='gcc -std=c99'
-#alias g++='g++-4.9 -std=c++14 '
 alias vimq='env | grep vim'
 alias vims='vim -S'
 alias vimr='vim -R'

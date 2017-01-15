@@ -52,3 +52,27 @@ TODO
     - ctrl-x 2
     - ctrl-l to clear
 
+### Autoconf
+- Input files are `configure.am` and `Makefile.am`
+
+```
+aclocal
+autoconf
+./configure
+```
+
+- If you see the error, `configure: error: cannot find install-sh, install.sh, or shtool in build/autoconf "."/build/autoconf`, then:
+
+```
+libtoolize --force
+aclocal
+autoheader
+automake --force-missing --add-missing
+autoconf
+./configure
+```
+
+- reference: http://askubuntu.com/questions/27677/cannot-find-install-sh-install-sh-or-shtool-in-ac-aux
+
+
+
