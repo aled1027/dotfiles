@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/dotfiles/oh-my-zsh
 
+alias a='./rpmmpc 0'
+alias b='./rpmmpc 1'
+alias c='./rpmmpc 2'
 
 #-----------My Additions-----------
 
@@ -17,7 +20,6 @@ alias gcc='gcc -std=c99'
 alias vimq='env | grep vim'
 alias vims='vim -S'
 alias vimr='vim -R'
-alias c='./compile.sh'
 alias r='./run.sh'
 alias m='make'
 alias mo='make &> out.out'
@@ -28,7 +30,7 @@ alias pi='python -i'
 alias pd='python setup.py develop'
 alias pt='python tests.py'
 export TERM=xterm-256color
-alias grep='grep --color=always'
+alias grep='grep -Rni --color=always'
 
 # Changing things based on OS
 #if [[ $USER == 'aledger' ]] ; then

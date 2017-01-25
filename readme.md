@@ -13,24 +13,13 @@ source ~/dotfiles/zshrc
 source ~/dotfiles/vimrc
 ```
 
-## Updates
-
-### To update zshrc
-TODO
-
-### To update vim
-- to update the vim files, simply run `cd vim_runtime; python update_plugins.py`
-
 ### Miscellaneous
-- Good command line tools:
-    - `htop` - a better version of `top`
+- print both stdout and stderr to file: `./command &> out`
+
+### Git
 - git command to git rm all deleted files:
     - `git ls-files --deleted -z | xargs -0 git rm`
-- Inside of gdb, `run > out` or run command-line-args > out` will print to a file.
 - `git d file.py` runs git diff in vimdiff
-- look into https://github.com/airblade/vim-rooter for finding project root
-    - should make it so that vim automatically finds the makefile and tags file, regardless
-    - of where vim opens up
 
 ### Networking
 - If only able to access (listed below), you might only be able to access ipv6 websites.
@@ -40,8 +29,8 @@ TODO
     - or maybe not.
     - maybe only ipv6?
 
-
 ### Anaconda
+`conda env list`
 `source activate data_analysis`
 `source deactivate`
 
@@ -54,4 +43,20 @@ TODO
     - ctrl-x 1
     - ctrl-x 2
     - ctrl-l to clear
+- Inside of gdb, `run > out` or run command-line-args > out` will print to a file.
+
+##  CMAKE
+- cmake clean: 
+find . -iwholename '*cmake*' -not -name CMakeLists.txt -delete
+
+- To use boost in cmake:
+```
+# Add boost libraries
+find_package( Boost COMPONENTS system REQUIRED )
+link_directories( ${Boost_LIBRARY_DIRS} )
+include_directories( ${Boost_INCLUDE_DIRS} )
+```
+    
+
+
 

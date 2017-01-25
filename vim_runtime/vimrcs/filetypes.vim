@@ -95,10 +95,10 @@ let g:haddock_browser="/usr/bin/firefox"
 au FileType cpp set nocompatible
 au FileType cpp set autoindent
 au FileType cpp set smartindent
-au FileType cpp set tabstop=4        " tab width is 4 spaces
-au FileType cpp set shiftwidth=4     " indent also with 4 spaces
+au FileType cpp set tabstop=2        " tab width is 4 spaces
+au FileType cpp set shiftwidth=2     " indent also with 4 spaces
 au FileType cpp set expandtab        " expand tabs to spaces
-au FileType cpp set textwidth=120
+au FileType cpp set textwidth=80
 au FileType cpp set showmatch
 au FileType cpp set comments=sl:/*,mb:\ *,elx:\ */
 " au FileType cpp map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>

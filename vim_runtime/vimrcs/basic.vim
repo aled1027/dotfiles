@@ -9,6 +9,7 @@ nmap <silent> <Leader>rv <Plug>SetTmuxVars
 
 "
 "---------------------GENERAL-------------------------
+syntax on
 set cursorline
 set history=700
 filetype plugin on
