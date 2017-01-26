@@ -9,7 +9,11 @@ nmap <silent> <Leader>rv <Plug>SetTmuxVars
 
 "
 "---------------------GENERAL-------------------------
+<<<<<<< HEAD
 set nocompatible
+=======
+syntax on
+>>>>>>> 5c2165023dbdec98001b79bbe5d2ac67e2ab7e89
 set cursorline
 set history=700
 filetype plugin on
@@ -28,6 +32,7 @@ set autoread
 "  hide buffer when it becomes abandoned
 set hid
 set nu
+set ff=unix 
 
 "---  Moving between splits  ----------------------------------------------
 nnoremap <C-J> <C-W><C-J>
