@@ -130,3 +130,6 @@ export PATH="/home/alex/anaconda3/bin:$PATH"
 ##--- MORE MY ADDITIONS ----------------------------------------------
 export PATH=~/.cabal/bin:$PATH
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+DISABLE_UPDATE_PROMPT=true
+DISABLE_AUTO_UPDATE=true
