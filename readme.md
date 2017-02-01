@@ -20,6 +20,10 @@ source ~/dotfiles/vimrc
 - git command to git rm all deleted files:
     - `git ls-files --deleted -z | xargs -0 git rm`
 - `git d file.py` runs git diff in vimdiff
+- after cloning, branch exists on github but not locally
+    - see all branches: `git branch -a`
+    - recreate branch locally `git branch -t branch origin/branch`
+    - goto branch `git checkout branch`
 
 ### Networking
 - If only able to access (listed below), you might only be able to access ipv6 websites.
@@ -56,9 +60,6 @@ find_package( Boost COMPONENTS system REQUIRED )
 link_directories( ${Boost_LIBRARY_DIRS} )
 include_directories( ${Boost_INCLUDE_DIRS} )
 ```
-    
-
-
 
 ### Autoconf
 - Input files are `configure.am` and `Makefile.am`

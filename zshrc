@@ -9,9 +9,7 @@ alias c='./rpmmpc 2'
 #-----------My Additions-----------
 
 alias gpp='git push origin $(current_branch)'
-alias make_pdf='pdftk *.pdf cat output out.pdf'
-alias lein='/home/alex/Documents/summer/clojure/lein'
-
+alias cleancmake='find . -iwholename "*cmake*" -not -name CMakeLists.txt -delete'
 
 export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
@@ -106,7 +104,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:PATH"
 export PATH="/home/alex/anaconda3/bin:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
