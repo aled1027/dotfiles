@@ -1,20 +1,20 @@
-# Path to your oh-my-zsh installation.
 export ZSH=$HOME/dotfiles/oh-my-zsh
 export GOPATH=$HOME/Documents/goworkspace
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
+export TERM=xterm-256color
+export PATH=~/.cabal/bin:$PATH
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="$PATH:/home/alex/anaconda3/bin"
 
-alias a='./rpmmpc 0'
-alias b='./rpmmpc 1'
-alias c='./rpmmpc 2'
-
-#-----------My Additions-----------
+# oh-my-zsh variables
+DISABLE_UPDATE_PROMPT=true 
+DISABLE_AUTO_UPDATE=true
+ZSH_THEME="af-magic"
 
 alias gpp='git push origin $(current_branch)'
 alias cleancmake='find . -iwholename "*cmake*" -not -name CMakeLists.txt -delete'
-
-export EDITOR=/usr/bin/vim
-export VISUAL=/usr/bin/vim
-
-#alias vimq='env | grep vim'
 alias vims='vim -S'
 alias vimr='vim -R'
 alias r='./run.sh'
@@ -26,90 +26,18 @@ alias p='python'
 alias pi='python -i'
 alias pd='python setup.py develop'
 alias pt='python tests.py'
-export TERM=xterm-256color
 
-# Changing things based on OS
-#if [[ $USER == 'aledger' ]] ; then
-#    alias open='open'
-#else
-#    alias open='xdg-open'
-#fi
+# Computer specific settings
+if [ $(hostname) = alex-ThinkPad-T440s ]; then
+    alias open='xdg-open'
+    # for keychain
+    eval $(keychain --quiet --eval --agents ssh id_rsa)
+else
+    alias open='open'
+fi
 
-# for keychain
-# eval $(keychain --quiet --eval --agents ssh id_rsa)
-
-
-# more additions at end
-# ADDITIONS FOR MARKOV:
-#export PYTHONPATH=$PYTHONPATH:/Users/alexledger/Desktop/new_alife
-# END ADDITIONS FOR MARKOV
-
-
-#--------End my additions----------
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-
-ZSH_THEME="af-magic"
-
-#PROMPT="alex"
-#export PS1="alex"
-
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to disable command auto-correction.
-# DISABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git)
-
 source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-export PATH="/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:PATH"
-export PATH="/home/alex/anaconda3/bin:$PATH"
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -118,16 +46,8 @@ export PATH="/home/alex/anaconda3/bin:$PATH"
 #   export EDITOR='mvim'
 # fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-#
-#
-##--- MORE MY ADDITIONS ----------------------------------------------
-export PATH=~/.cabal/bin:$PATH
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-DISABLE_UPDATE_PROMPT=true
-DISABLE_AUTO_UPDATE=true
+
+
+
