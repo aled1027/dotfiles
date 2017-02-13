@@ -26,6 +26,7 @@ alias p='python'
 alias pi='python -i'
 alias pd='python setup.py develop'
 alias pt='python tests.py'
+alias vim='nvim'
 
 # Computer specific settings
 if [ $(hostname) = alex-ThinkPad-T440s ]; then
