@@ -24,6 +24,8 @@ source ~/dotfiles/vimrc
     - see all branches: `git branch -a`
     - recreate branch locally `git branch -t branch origin/branch`
     - goto branch `git checkout branch`
+- searching github:
+    - `is:open is:pr org:mpc`
 
 ### Networking
 - If only able to access (listed below), you might only be able to access ipv6 websites.
