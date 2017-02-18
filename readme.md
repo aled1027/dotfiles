@@ -36,6 +36,7 @@ source ~/dotfiles/vimrc
 ### Anaconda
 `conda env list`
 `source activate data_analysis`
+`source activate` # activates normal anaconda binary
 `source deactivate`
 
 ### PDFTK
