@@ -38,6 +38,7 @@ source ~/dotfiles/vimrc
 ### Anaconda
 `conda env list`
 `source activate data_analysis`
+`source activate` # activates normal anaconda binary
 `source deactivate`
 
 ### PDFTK
@@ -85,5 +86,7 @@ autoconf
 
 - reference: http://askubuntu.com/questions/27677/cannot-find-install-sh-install-sh-or-shtool-in-ac-aux
 
+## NVIM
+https://arusahni.net/blog/2015/03/switching-to-neovim-part-1.html
 
 
