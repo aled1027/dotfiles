@@ -9,6 +9,7 @@ nmap <silent> <Leader>rv <Plug>SetTmuxVars
 
 "
 "---------------------GENERAL-------------------------
+set mouse=
 set nocompatible
 syntax on
 set cursorline
@@ -31,11 +32,12 @@ set hid
 set nu
 set ff=unix 
 
+
 "---  Moving between splits  ----------------------------------------------
 nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-K> <C-W><C-K>
 
 "------------SEARCHING and TABBING-------------
 set shiftwidth=4
@@ -111,8 +113,8 @@ endfunction
 " vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
 
 function! HasPaste()
-if &paste
-    return 'PASTE MODE '
+    if &paste
+        return 'PASTE MODE '
     en
     return ''
 endfunction
@@ -165,3 +167,4 @@ endfunction
 " :hi Search guibg=LightBlue
 " something about moving the cursor
 " set so=7
+"

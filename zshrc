@@ -14,7 +14,8 @@ DISABLE_AUTO_UPDATE=true
 ZSH_THEME="af-magic"
 
 alias gpp='git push origin $(current_branch)'
-alias cleancmake='find . -iwholename "*cmake*" -not -name CMakeLists.txt -delete'
+# internal_utils.cmake is a key CMake file in google test. Do not accidentally delete it.
+alias cleancmake='find . -iwholename "*cmake*" -not -name CMakeLists.txt -not -name internal_utils.cmake -delete'
 alias vims='vim -S'
 alias vimr='vim -R'
 alias r='./run.sh'
@@ -26,7 +27,7 @@ alias p='python'
 alias pi='python -i'
 alias pd='python setup.py develop'
 alias pt='python tests.py'
-alias vim='nvim'
+alias vim='vim'
 
 # Computer specific settings
 if [ $(hostname) = alex-ThinkPad-T440s ]; then

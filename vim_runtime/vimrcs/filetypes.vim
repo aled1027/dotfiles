@@ -100,7 +100,11 @@ au FileType cpp set expandtab        " expand tabs to spaces
 au FileType cpp set textwidth=80
 au FileType cpp set showmatch
 au FileType cpp set comments=sl:/*,mb:\ *,elx:\ */
-au FileType cpp :set makeprg=make\ -C\ build
+au FileType cpp :set makeprg=make\ -C\ build\ -j8
+" color 80th column dark grey - the end of a line.
+
+" au FileType cpp :set colorcolumn=80
+" au FileType cpp highlight ColorColumn ctermbg=darkgray
 " au FileType cpp map <F4> :e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>
 
 
