@@ -13,6 +13,11 @@ source ~/dotfiles/zshrc
 source ~/dotfiles/vimrc
 ```
 
+### .spacemacs
+```
+ln -s ~/dotfiles/spacemacs ~/.spacemacs
+```
+
 ### Miscellaneous
 - print both stdout and stderr to file: `./command &> out`
 
