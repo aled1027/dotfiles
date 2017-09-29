@@ -18,8 +18,17 @@ source ~/dotfiles/vimrc
 ln -s ~/dotfiles/spacemacs ~/.spacemacs
 ```
 
+If behind firewall, can use `emacs --insecure` to install melpa packages without https.
+
+- Compilation problem notes:
+  - `describe-variable` to see the value of a variable and who set it.
+  - https://github.com/syl20bnr/spacemacs/issues/9549
+- running lisp code:
+  - highlight then `C-x C-e`
+
 ### Miscellaneous
 - print both stdout and stderr to file: `./command &> out`
+- print stdout and stderr to screen and file: `program [arguments...] 2>&1 | tee out`
 
 ### Git
 - git command to git rm all deleted files:

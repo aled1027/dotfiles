@@ -1,4 +1,5 @@
 cache
 bufExplorer
 tags
+*.DS_Store
 
