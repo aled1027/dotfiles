@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Id of this thread
+# key: this_thread
+# --
+std::this_thread::get_id();
+$0

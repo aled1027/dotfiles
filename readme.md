@@ -25,6 +25,18 @@ If behind firewall, can use `emacs --insecure` to install melpa packages without
   - https://github.com/syl20bnr/spacemacs/issues/9549
 - running lisp code:
   - highlight then `C-x C-e`
+- YAS Snippet
+  - Insert a snippet with `SPC i s` and search for the key or name
+  - Use tab to move between pre-defined entries in the snippet
+  - Add snippets to dotfiles/snippets
+  - These are all included in spacemacs via the command:
+    - `(setq yas-snippet-dirs (append yas-snippet-dirs
+                                   '("~/dotfiles/snippets")))`
+  - See my example for how to write a snippet or the internet.
+  - Resources
+    - https://github.com/AndreaCrotti/yasnippet-snippets
+    - https://jaketrent.com/post/code-snippets-spacemacs/
+    - https://gist.github.com/kazu634/290872
 
 ### Miscellaneous
 - print both stdout and stderr to file: `./command &> out`

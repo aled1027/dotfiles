@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: sleep for milliseconds
+# key: sleep
+# --
+std::this_thread::sleep_for(std::chrono::milliseconds(${1:time}));
+$0

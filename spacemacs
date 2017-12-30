@@ -31,30 +31,35 @@
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     python
-     markdown
-     ocaml
-     latex
+     csv
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
+     python
+     markdown
+     ocaml
+     latex
+     rust
+     (c-c++ :variables
+            c-c++-enable-clang-support t)
      helm
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-enable-snippets-in-popup t
+                      auto-completion-complete-with-key-sequence-delay 0.01)
      better-defaults
      emacs-lisp
      git
      markdown
      vagrant
-     ;; org
+     org
      (shell :variables
             shell-default-shell 'term
             shell-default-height 30
             shell-default-position 'bottom)
      ;; spell-checking
      ;; syntax-checking
-     (c-c++ :variables c-c++-enable-clang-support t)
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
@@ -134,7 +139,7 @@
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
    dotspacemacs-themes '(spacemacs-dark
-                         solarized-light)
+                         spacemacs-light)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -318,9 +323,14 @@
  This is the place where most of your configurations should be done. Unless it is
  explicitly specified that a variable should be set before a package is loaded,
  you should place your code here."
-  (global-company-mode t)
+  (require 'helm-bookmark)
+  ;; (global-company-mode t)
   (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
-  (setq-default helm-make-build-dir "build")
+  ;; (setq-default helm-make-build-dir "build")
+  (setq projectile-project-test-cmd  "make -C build t")
+  (setq projectile-test-cmd  "make -C build t")
+  (setq yas-snippet-dirs (append yas-snippet-dirs
+                                 '("~/dotfiles/snippets")))
 
   ;; To set a custom escape key. WARNING: jj is really annoying
   ;; as an escape key because it escapes from *everything*
@@ -346,8 +356,14 @@
   (global-set-key (kbd "C-k") #'evil-window-up)
   (global-set-key (kbd "C-l") #'evil-window-right)
 
+  ;; Turn on global auto complete mode.
+  ;; Requires having company mode off, according to
+  ;; auto-complete readme
+  ;; (global-auto-complete-mode)
+
   ;; No temporary files
   (setq create-lockfiles nil)
+  (setq auto-complete-mode t)
 
   )
 
@@ -368,15 +384,22 @@
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (dash-functional vagrant-tramp vagrant yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic auctex-latexmk company-auctex auctex google-c-style disaster company-c-headers cmake-mode clang-format xterm-color unfill smeargle shell-pop orgit mwim multi-term magit-gitflow helm-gitignore helm-company helm-c-yasnippet gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor eshell-z eshell-prompt-extras esh-help company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete mmm-mode markdown-toc markdown-mode gh-md key-chord utop tuareg caml ocp-indent merlin ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async)))
+    (csv-mode org-projectile org-pomodoro alert log4e org-category-capture org-present gntp org-download htmlize gnuplot toml-mode racer cargo rust-mode dash-functional vagrant-tramp vagrant yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic auctex-latexmk company-auctex auctex google-c-style disaster company-c-headers cmake-mode clang-format xterm-color unfill smeargle shell-pop orgit mwim multi-term magit-gitflow helm-gitignore helm-company helm-c-yasnippet gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor eshell-z eshell-prompt-extras esh-help company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete mmm-mode markdown-toc markdown-mode gh-md key-chord utop tuareg caml ocp-indent merlin ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async)))
+ '(paradox-github-token t)
+ '(projectile-project-compilation-cmd (quote "make -j8 -C build") t)
  '(safe-local-variable-values
    (quote
-    ((projectile-project-compilation-cmd . "make -j8 -C build")
-     (projectile-project-compilation-cmd . "make -C build t")
-     (projectile-project-command-cmd . "make -C build t")
+    ((projectile-project-compilation-cmd . "cargo test -- --nocapture -deadcode -unusedvariable")
+     (projectile-project-compilation-cmd . "cargo build")
+     (projectile-project-test-cmd . "cargo test -- --nocapture")
+     (projectile-project-compilation-cmd . "cargo test -- --nocapture")
+     (projectile-project-test-cmd . "cargo test")
+     (projectile-project-compilation-cmd . "cargo run")
+     (projectile-project-compilation-cmd . "make -j8 -C build")
+     (require
+      (quote dired))
      (projectile-project-compile-cmd . "make -j8 -C build")
-     (projectile-project-test-cmd . "make -C build t")
-     (projectile-project-test-cmd . "sbcl --script test.lisp"))))
+     (projectile-project-test-cmd . "make -C build t"))))
  '(tool-bar-mode nil))
 
 (custom-set-faces
@@ -385,4 +408,12 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(default ((t (:family "Monaco" :foundry "nil" :slant normal :weight normal :height 120 :width normal)))))
+
+(defun my-reload-dir-locals-for-current-buffer ()
+  ;; https://emacs.stackexchange.com/questions/13080/reloading-directory-local-variables
+  "reload dir locals for the current buffer"
+  (interactive)
+  (let ((enable-local-variables :all))
+    (hack-dir-local-variables-non-file-buffer)))
+
 

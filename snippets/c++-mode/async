@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: std::async
+# key: async
+# --
+auto fut = std::async(std::launch::async, [](){
+    $0
+});

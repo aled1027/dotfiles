@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: easylogging++
+# key: log
+# --
+LOG(${1:DEBUG}) << "$2";
+$0
