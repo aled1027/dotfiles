@@ -20,6 +20,8 @@ ln -s ~/dotfiles/spacemacs ~/.spacemacs
 
 If behind firewall, can use `emacs --insecure` to install melpa packages without https.
 
+See `notes/spacemacs.md` in notes repository for more information on personal usage and helpful commands.
+
 - Compilation problem notes:
   - `describe-variable` to see the value of a variable and who set it.
   - https://github.com/syl20bnr/spacemacs/issues/9549
@@ -62,13 +64,17 @@ If behind firewall, can use `emacs --insecure` to install melpa packages without
     - maybe only ipv6?
 
 ### Anaconda
-`conda env list`
-`source activate data_analysis`
-`source activate` # activates normal anaconda binary
-`source deactivate`
+```
+conda env list
+source activate data_analysis
+source activate # activates normal anaconda binary
+source deactivate
+```
 
 ### PDFTK
-`pdftk f1.pdf f2.pdf f3.pdf cat out combined.pdf`
+```
+pdftk f1.pdf f2.pdf f3.pdf cat out combined.pdf
+```
 
 ### GDB
 - open up code on top
