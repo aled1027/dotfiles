@@ -40,6 +40,13 @@ See `notes/spacemacs.md` in notes repository for more information on personal us
     - https://jaketrent.com/post/code-snippets-spacemacs/
     - https://gist.github.com/kazu634/290872
 
+### Mac apps
+
+1. Create your shell script (ex command.sh)
+2. Give it execution permissions (chmod 755 ./command.sh)
+3. Get Info -> Open with: -> (associate the Terminal app)
+4. Get Info -> (put the icon you want on it)
+
 ### Miscellaneous
 - print both stdout and stderr to file: `./command &> out`
 - print stdout and stderr to screen and file: `program [arguments...] 2>&1 | tee out`
