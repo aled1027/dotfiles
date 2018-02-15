@@ -1,0 +1,18 @@
+function gpp --description 'Push current branch to origin'
+  set -l branch (git branch 2> /dev/null | grep --color=never -e '*.\(.*\)' | colrm 1 2)
+  git push origin $branch
+end
+
+function gst --description 'git status'
+  git status
+end
+
+function ga --description 'git add'
+  git add
+end
+
+function cleancmake 
+  find . -iwholename "*cmake*" -not -name CMakeLists.txt -not -name internal_utils.cmake -delete
+end
+
+

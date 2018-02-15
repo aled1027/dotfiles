@@ -128,4 +128,12 @@ autoconf
 ## NVIM
 https://arusahni.net/blog/2015/03/switching-to-neovim-part-1.html
 
+## Coq and Spacemacs
+- https://github.com/tchajed/spacemacs-coq
+- http://develop.spacemacs.org/layers/+lang/coq/README.html
+Followed instructions on github readme: "To install, run git clone https://github.com/tchajed/spacemacs-coq ~/.emacs.d/private/coq and add coq to your dotspacemacs-configuration-layers list."
+Buuuut that didn't work
+
+
+
 
