@@ -4,7 +4,7 @@ export EDITOR=/usr/bin/vim
 export VISUAL=/usr/bin/vim
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-export PATH="$PATH:/home/alex/anaconda3/bin"
+export PATH="$PATH:$HOME/anaconda3/bin"
 
 alias grep='rg'
 alias gst='git status'
