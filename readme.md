@@ -134,6 +134,13 @@ https://arusahni.net/blog/2015/03/switching-to-neovim-part-1.html
 Followed instructions on github readme: "To install, run git clone https://github.com/tchajed/spacemacs-coq ~/.emacs.d/private/coq and add coq to your dotspacemacs-configuration-layers list."
 Buuuut that didn't work
 
+## Replacing strings in files
 
+Verified that this works on macs with OpenBSD (non-Gnu) Sed
+```
+# replace all "foo/bar.hpp" with "foobar.hpp"
+# Saves a backup in filename.cpp.bu
+Sed -i.bu 's/foo\/bar.hpp/foobar.hpp/' *.cpp
+```
 
 
