@@ -51,6 +51,7 @@
                       auto-completion-complete-with-key-sequence-delay 0.01)
      better-defaults
      emacs-lisp
+     latex
      git
      markdown
      vagrant
@@ -350,14 +351,21 @@
   ;; smartparens: not sure if this is working
   (spacemacs/toggle-smartparens-globally-off)
 
-  ;; latex
-  ; (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
   ;; Move between windows
   (global-set-key (kbd "C-h") #'evil-window-left)
   (global-set-key (kbd "C-j") #'evil-window-down)
   (global-set-key (kbd "C-k") #'evil-window-up)
   (global-set-key (kbd "C-l") #'evil-window-right)
+
+  ;; latex-mode
+  ;; Do this so window movements work in latex
+  (with-eval-after-load 'latex-mode
+    (global-set-key (kbd "C-h") #'evil-window-left)
+    (global-set-key (kbd "C-j") #'evil-window-down)
+    (global-set-key (kbd "C-k") #'evil-window-up)
+    (global-set-key (kbd "C-l") #'evil-window-right))
+  ;; (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
   ;; Turn on global auto complete mode.
   ;; Requires having company mode off, according to
