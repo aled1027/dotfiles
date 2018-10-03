@@ -22,7 +22,7 @@ filetype indent on
 set backspace=eol,start,indent
 
 set background=dark
-colorscheme jellybeans
+colorscheme solarized
 
 " auto changes file when it is changed on the outside
 set autoread
