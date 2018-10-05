@@ -143,6 +143,8 @@ Verified that this works on macs with OpenBSD (non-Gnu) Sed
 Sed -i.bu 's/foo\/bar.hpp/foobar.hpp/' *.cpp
 ```
 
+## Reading/Messing with CSV Files
+
 ## Setting environment variables optionally:
 I added the following to `.zshrc` for setting environmental variables when needed.
 

@@ -17,7 +17,7 @@ set history=700
 filetype plugin on
 filetype indent on
 " filetype plugin indent on
-:imap jj <Esc>
+:imap fd <Esc>
 
 set backspace=eol,start,indent
 
