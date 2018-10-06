@@ -142,6 +142,33 @@ sudo apt-get install touchpad-indicator
 Followed instructions on github readme: "To install, run git clone https://github.com/tchajed/spacemacs-coq ~/.emacs.d/private/coq and add coq to your dotspacemacs-configuration-layers list."
 Buuuut that didn't work
 
+## Replacing strings in files
+
+Verified that this works on macs with OpenBSD (non-Gnu) Sed
+```
+# replace all "foo/bar.hpp" with "foobar.hpp"
+# Saves a backup in filename.cpp.bu
+Sed -i.bu 's/foo\/bar.hpp/foobar.hpp/' *.cpp
+```
+
+## Reading/Messing with CSV Files
+
+## Setting environment variables optionally:
+I added the following to `.zshrc` for setting environmental variables when needed.
+
+```
+set_proxies() {
+export HTTPS_PROXY=http://llproxy.llan.ll.mit.edu:8080
+export http_proxy=http://llproxy.llan.ll.mit.edu:8080
+export https_proxy=http://llproxy.llan.ll.mit.edu:8080
+export no_proxy="localhost,127.0.0.1,.llan.ll.mit.edu"
+}
+
+use_anaconda() {
+# added by Anaconda3 4.2.0 installer
+export PATH="/Users/gr27141/anaconda3/bin:$PATH"
+}
+```
 
 
 

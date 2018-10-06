@@ -17,12 +17,12 @@ set history=700
 filetype plugin on
 filetype indent on
 " filetype plugin indent on
-:imap jj <Esc>
+:imap fd <Esc>
 
 set backspace=eol,start,indent
 
 set background=dark
-colorscheme jellybeans
+colorscheme solarized
 
 " auto changes file when it is changed on the outside
 set autoread

@@ -52,6 +52,7 @@
                       auto-completion-complete-with-key-sequence-delay 0.01)
      better-defaults
      emacs-lisp
+     latex
      git
      markdown
      vagrant
@@ -140,8 +141,8 @@
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
-                         spacemacs-light)
+   dotspacemacs-themes '(spacemacs-light
+                         spacemacs-dark)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -334,6 +335,8 @@
   (setq yas-snippet-dirs (append yas-snippet-dirs
                                  '("~/dotfiles/snippets")))
 
+  (spacemacs/toggle-smartparens-globally-off)
+
   ;; To set a custom escape key. WARNING: jj is really annoying
   ;; as an escape key because it escapes from *everything*
   ;; (setq-default evil-escape-key-sequence "ff")
@@ -349,14 +352,18 @@
   ;; smartparens: not sure if this is working
   (spacemacs/toggle-smartparens-globally-off)
 
-  ;; latex
-  ; (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
   ;; Move between windows
   (global-set-key (kbd "C-h") #'evil-window-left)
   (global-set-key (kbd "C-j") #'evil-window-down)
   (global-set-key (kbd "C-k") #'evil-window-up)
   (global-set-key (kbd "C-l") #'evil-window-right)
+
+  ;; latex-mode
+  ;; Do this so window movements work in latex
+  (with-eval-after-load 'latex-mode
+    '(global-set-key (kbd "C-j") #'evil-window-down))
+      ;; (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
   ;; Turn on global auto complete mode.
   ;; Requires having company mode off, according to
@@ -386,7 +393,7 @@
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data livid-mode skewer-mode js2-refactor multiple-cursors company-tern web-beautify simple-httpd json-snatcher json-reformat js2-mode js-doc tern json-mode coffee-mode vimrc-mode dactyl-mode csv-mode org-projectile org-pomodoro alert log4e org-category-capture org-present gntp org-download htmlize gnuplot toml-mode racer cargo rust-mode dash-functional vagrant-tramp vagrant yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic auctex-latexmk company-auctex auctex google-c-style disaster company-c-headers cmake-mode clang-format xterm-color unfill smeargle shell-pop orgit mwim multi-term magit-gitflow helm-gitignore helm-company helm-c-yasnippet gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor eshell-z eshell-prompt-extras esh-help company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete mmm-mode markdown-toc markdown-mode gh-md key-chord utop tuareg caml ocp-indent merlin ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async)))
+    (web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode helm-css-scss haml-mode emmet-mode company-web web-completion-data xpm livid-mode skewer-mode js2-refactor multiple-cursors company-tern web-beautify simple-httpd json-snatcher json-reformat js2-mode js-doc tern json-mode coffee-mode vimrc-mode dactyl-mode csv-mode org-projectile org-pomodoro alert log4e org-category-capture org-present gntp org-download htmlize gnuplot toml-mode racer cargo rust-mode dash-functional vagrant-tramp vagrant yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic auctex-latexmk company-auctex auctex google-c-style disaster company-c-headers cmake-mode clang-format xterm-color unfill smeargle shell-pop orgit mwim multi-term magit-gitflow helm-gitignore helm-company helm-c-yasnippet gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy flycheck-pos-tip pos-tip flycheck evil-magit magit magit-popup git-commit with-editor eshell-z eshell-prompt-extras esh-help company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete mmm-mode markdown-toc markdown-mode gh-md key-chord utop tuareg caml ocp-indent merlin ws-butler winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint info+ indent-guide hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make projectile pkg-info epl helm-flx helm-descbinds helm-ag google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump f s diminish define-word column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line helm avy helm-core popup async)))
  '(paradox-github-token t)
  '(projectile-project-compilation-cmd (quote "make -j8 -C build") t)
  '(safe-local-variable-values
