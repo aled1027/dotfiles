@@ -171,4 +171,18 @@ export PATH="/Users/gr27141/anaconda3/bin:$PATH"
 ```
 
 
+## Copy and Paste
+
+You can use `pbcopy` to copy and paste files. pbcopy is only  found on mac; the linux version is `xclip` but given the slightly different usage, I've added an alias so that pbcopy works on linux:
+
+```
+alias pbcopy='xclip -selection clipboard'
+alias pbpaste='xclip -selection clipboard -o'
+```
+
+And usage:
+```
+cat file.txt | pbcopy
+# Now go wherever you want and paste
+```
 
