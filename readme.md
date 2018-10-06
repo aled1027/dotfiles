@@ -125,8 +125,16 @@ autoconf
 
 - reference: http://askubuntu.com/questions/27677/cannot-find-install-sh-install-sh-or-shtool-in-ac-aux
 
-## NVIM
-https://arusahni.net/blog/2015/03/switching-to-neovim-part-1.html
+## Touchpad Problems
+- Installed `touchpad-indicator` via apt
+- Ran it, open up preferences, and set time to disable touchpad after typing.
+- I'm currently using 400ms, but I might change it.
+
+```
+sudo add-apt-repository ppa:atareao/atareao
+sudo apt-get update
+sudo apt-get install touchpad-indicator
+```
 
 ## Coq and Spacemacs
 - https://github.com/tchajed/spacemacs-coq
