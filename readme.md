@@ -62,6 +62,17 @@ See `notes/spacemacs.md` in notes repository for more information on personal us
 - searching github:
     - `is:open is:pr org:mpc`
 
+- Workflow
+```
+1. Get master, make new branch
+2. Work on new branch
+3. Meanwhile, everyone else works on master
+4. Run `git pull --rebase origin master` to put your commits on top of master
+
+```
+
+
+
 ### Networking
 - If only able to access (listed below), you might only be able to access ipv6 websites.
     - google, youtube, facebook, example.com, yahoo.com
@@ -186,3 +197,24 @@ cat file.txt | pbcopy
 # Now go wherever you want and paste
 ```
 
+## Fish
+```
+# Add to path, permanently
+set -U fish_user_paths ~/anaconda3/bin $fish_user_paths
+
+set -x key value
+```
+
+## SSH
+
+Make it so you don't have to type in ssh key everytime
+```
+$ eval 'ssh-agent'
+$ ssh-add ~/.ssh/id_rsa
+# good to go
+```
+
+## Internet
+
+- `detect.xxxxx`
+- `10.2.2.2`

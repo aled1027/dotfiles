@@ -1,10 +1,19 @@
-set background=light
 
-set nolist
-" autocmd FileType javascript setlocal ts=4 sts=4 sw=4
+set nolist wrap linebreak
 autocmd Filetype javascript setlocal ts=2 sw=2 sts=0 noexpandtab
 
+
+
 imap fd <Esc>
+
+" syntax enable " If I do this in an html file, then the colors look much better
+set background=light
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+let g:solarized_termcolors=256
+let g:solarized_termtrans = 1
+
+colorscheme solarized
 
 
 
